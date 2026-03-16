@@ -1,0 +1,2 @@
+E2rGtybi370yTjtg
+mongodb+srv://database:E2rGtybi370yTjtg@cluster0.fphr0oc.mongodb.net/
