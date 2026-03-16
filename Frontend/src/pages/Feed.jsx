@@ -1,5 +1,6 @@
 import React, { useState,useEffect } from 'react'
 import axios from "axios"
+const backendUrl = import.meta.env.VITE_BACKEND_URL
 
 
 const Feed = () => {
@@ -14,7 +15,8 @@ const Feed = () => {
 
     useEffect(()=>{
 
-        axios.get("http://localhost:3000/posts")
+        axios.get(`${backendUrl}/posts`)
+        //`${process.env.MONGODB_URI}/posts`
         .then((res)=>{
 
              setPosts(res.data.data)

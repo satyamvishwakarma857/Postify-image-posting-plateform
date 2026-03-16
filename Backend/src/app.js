@@ -35,6 +35,9 @@ app.post('/create-post',upload.single("image"),async(req,res)=>{
   
 
 })
+app.get("/",(req,res)=>{
+    res.send("API working")
+})
 
 app.get("/posts",async(req,res)=>{
     const data = await postModels.find();

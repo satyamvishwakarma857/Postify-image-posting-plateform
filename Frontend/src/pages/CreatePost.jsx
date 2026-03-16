@@ -1,6 +1,8 @@
 import React from 'react'
 import axios from "axios"
+
 import { useNavigate } from "react-router-dom"
+const backendUrl = import.meta.env.VITE_BACKEND_URL
 
 
 const CreatePost = () => {
@@ -18,9 +20,10 @@ const CreatePost = () => {
 
 
             const res = await axios.post(
-                "http://localhost:3000/create-post",
+                `${backendUrl}/create-post`,
                 formData
             )
+            //`${process.env.MONGODB_URI}/create-post`
 
             navigate("/feed")
         } catch (err) {
