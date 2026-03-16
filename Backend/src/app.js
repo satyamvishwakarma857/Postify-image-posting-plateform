@@ -48,7 +48,22 @@ app.get("/posts",async(req,res)=>{
     })
 
 })
+app.get("/delete",(req,res)=>{
+    res.status(200).json({message: "hahhahahaha"})
+})
 
+app.delete("/post/:id", async (req, res) => {
+  try {
+    const id = req.params.id;
+
+    await postModels.findOneAndDelete({_id: id});
+
+    res.json({ message: "Post deleted successfully" });
+
+  } catch (error) {
+    res.status(500).json({ message: "Error deleting post" });
+  }
+});
 
 
 
